@@ -25,15 +25,7 @@ namespace ConversorNumero.Dominio
         }
 
         public int Converter(string numeroRomano)
-        {
-            #region primeira tentantiva do 20 ao 30
-            //if (numeroRomano.StartsWith("XX"))
-            //{
-            //    numeroRomano = numeroRomano.Substring(1);
-            //    return numeros[numeroRomano] + 20;
-            //}
-            #endregion
-
+        {            
             if (numeroRomano.StartsWith("X"))
             {
                 numeroRomano = numeroRomano.Substring(1);                
