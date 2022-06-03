@@ -36,25 +36,9 @@ namespace ConversorNumero.Dominio
 
             if (numeroRomano.StartsWith("X"))
             {
-                int numeroBase;
+                numeroRomano = numeroRomano.Substring(1);                
 
-                if (numeroRomano.StartsWith("XXX"))
-                {
-                    numeroRomano = numeroRomano.Substring(3);
-                    numeroBase = 30;
-                }
-                else if (numeroRomano.StartsWith("XX"))
-                {
-                    numeroRomano = numeroRomano.Substring(2);
-                    numeroBase = 20;
-                }
-                else
-                {
-                    numeroRomano = numeroRomano.Substring(1);
-                    numeroBase = 10;
-                }
-
-                return numeros[numeroRomano] + numeroBase;
+                return numeros[numeroRomano] + 10;
             }
 
             return numeros[numeroRomano];

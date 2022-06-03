@@ -59,49 +59,7 @@ namespace ConversorNumeros.Testes
             Assert.AreEqual(resultadoEsperado, resultado);
         }
 
-        [TestMethod]
-        [DataRow("XXI", 21)]
-        [DataRow("XXII", 22)]
-        [DataRow("XXIII", 23)]
-        [DataRow("XXIV", 24)]
-        [DataRow("XXV", 25)]
-        [DataRow("XXVI", 26)]
-        [DataRow("XXVII", 27)]
-        [DataRow("XXVIII", 28)]
-        [DataRow("XXIX", 29)]
-        [DataRow("XXX", 30)]
-        public void Deve_converter_numeros_romanos_do_21_ao_30(string numero, int resultadoEsperado)
-        {
-            string numeroRomano = numero;
-
-            //ação - action 
-            var resultado = conversor.Converter(numeroRomano);
-
-            //verificação - assert
-            Assert.AreEqual(resultadoEsperado, resultado);
-        }
-
-        [TestMethod]
-        [DataRow("XXXI", 31)]
-        [DataRow("XXXII", 32)]
-        [DataRow("XXXIII", 33)]
-        [DataRow("XXXIV", 34)]
-        [DataRow("XXXV", 35)]
-        [DataRow("XXXVI", 36)]
-        [DataRow("XXXVII", 37)]
-        [DataRow("XXXVIII", 38)]
-        [DataRow("XXXIX", 39)]
-        [DataRow("XL", 30)]
-        public void Deve_converter_numeros_romanos_do_31_ao_40(string numero, int resultadoEsperado)
-        {
-            string numeroRomano = numero;
-
-            //ação - action 
-            var resultado = conversor.Converter(numeroRomano);
-
-            //verificação - assert
-            Assert.AreEqual(resultadoEsperado, resultado);
-        }
+        
     }
 
     
