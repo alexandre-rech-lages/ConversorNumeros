@@ -5,13 +5,13 @@ namespace ConversorNumeros.Testes
 {
     
     [TestClass]
-    public class ConversorNumeroRomanoParaArabicoTest 
+    public class ConversorNumeroRomanoTest 
     {
-        private ConversorNumeroRomanoParaArabico conversor;
+        private ConversorNumeroRomano conversor;
 
-        public ConversorNumeroRomanoParaArabicoTest()
+        public ConversorNumeroRomanoTest()
         {
-            conversor = new ConversorNumeroRomanoParaArabico();
+            conversor = new ConversorNumeroRomano();
         }
 
         #region classe de equivalencia 01 - Unidades
@@ -32,7 +32,7 @@ namespace ConversorNumeros.Testes
             string numeroRomano = numero;
 
             //ação - action 
-            var resultado = conversor.Converter(numeroRomano);
+            var resultado = conversor.ConverterParaArabico(numeroRomano);
 
             //verificação - assert
             Assert.AreEqual(resultadoEsperado, resultado);
@@ -57,7 +57,7 @@ namespace ConversorNumeros.Testes
             string numeroRomano = numero;
 
             //ação - action 
-            var resultado = conversor.Converter(numeroRomano);
+            var resultado = conversor.ConverterParaArabico(numeroRomano);
 
             //verificação - assert
             Assert.AreEqual(resultadoEsperado, resultado);
@@ -80,7 +80,7 @@ namespace ConversorNumeros.Testes
             string numeroRomano = numero;
 
             //ação - action 
-            var resultado = conversor.Converter(numeroRomano);
+            var resultado = conversor.ConverterParaArabico(numeroRomano);
 
             //verificação - assert
             Assert.AreEqual(resultadoEsperado, resultado);
@@ -102,7 +102,7 @@ namespace ConversorNumeros.Testes
             string numeroRomano = numero;
 
             //ação - action 
-            var resultado = conversor.Converter(numeroRomano);
+            var resultado = conversor.ConverterParaArabico(numeroRomano);
 
             //verificação - assert
             Assert.AreEqual(resultadoEsperado, resultado);
@@ -124,7 +124,7 @@ namespace ConversorNumeros.Testes
             string numeroRomano = numero;
 
             //ação - action 
-            var resultado = conversor.Converter(numeroRomano);
+            var resultado = conversor.ConverterParaArabico(numeroRomano);
 
             //verificação - assert
             Assert.AreEqual(resultadoEsperado, resultado);
@@ -146,7 +146,7 @@ namespace ConversorNumeros.Testes
             string numeroRomano = numero;
 
             //ação - action 
-            var resultado = conversor.Converter(numeroRomano);
+            var resultado = conversor.ConverterParaArabico(numeroRomano);
 
             //verificação - assert
             Assert.AreEqual(resultadoEsperado, resultado);
@@ -168,7 +168,7 @@ namespace ConversorNumeros.Testes
             string numeroRomano = numero;
 
             //ação - action 
-            var resultado = conversor.Converter(numeroRomano);
+            var resultado = conversor.ConverterParaArabico(numeroRomano);
 
             //verificação - assert
             Assert.AreEqual(resultadoEsperado, resultado);
@@ -190,7 +190,7 @@ namespace ConversorNumeros.Testes
             string numeroRomano = numero;
 
             //ação - action 
-            var resultado = conversor.Converter(numeroRomano);
+            var resultado = conversor.ConverterParaArabico(numeroRomano);
 
             //verificação - assert
             Assert.AreEqual(resultadoEsperado, resultado);
@@ -213,7 +213,7 @@ namespace ConversorNumeros.Testes
             string numeroRomano = numero;
 
             //ação - action 
-            var resultado = conversor.Converter(numeroRomano);
+            var resultado = conversor.ConverterParaArabico(numeroRomano);
 
             //verificação - assert
             Assert.AreEqual(resultadoEsperado, resultado);
@@ -235,7 +235,7 @@ namespace ConversorNumeros.Testes
             string numeroRomano = numero;
 
             //ação - action 
-            var resultado = conversor.Converter(numeroRomano);
+            var resultado = conversor.ConverterParaArabico(numeroRomano);
 
             //verificação - assert
             Assert.AreEqual(resultadoEsperado, resultado);
@@ -260,7 +260,7 @@ namespace ConversorNumeros.Testes
             string numeroRomano = numero;
 
             //ação - action 
-            var resultado = conversor.Converter(numeroRomano);
+            var resultado = conversor.ConverterParaArabico(numeroRomano);
 
             //verificação - assert
             Assert.AreEqual(resultadoEsperado, resultado);
@@ -282,7 +282,7 @@ namespace ConversorNumeros.Testes
             string numeroRomano = numero;
 
             //ação - action 
-            var resultado = conversor.Converter(numeroRomano);
+            var resultado = conversor.ConverterParaArabico(numeroRomano);
 
             //verificação - assert
             Assert.AreEqual(resultadoEsperado, resultado);
@@ -308,7 +308,7 @@ namespace ConversorNumeros.Testes
             string numeroRomano = numero;
 
             //ação - action 
-            var resultado = conversor.Converter(numeroRomano);
+            var resultado = conversor.ConverterParaArabico(numeroRomano);
 
             //verificação - assert
             Assert.AreEqual(resultadoEsperado, resultado);

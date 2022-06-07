@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace ConversorNumero.Dominio
 {
-    public class ConversorNumeroRomanoParaArabico
+    public class ConversorNumeroRomano
     {
         Dictionary<string, int> numeros = new Dictionary<string, int>();
 
-        public ConversorNumeroRomanoParaArabico()
+        public ConversorNumeroRomano()
         {
             string[] unidadesRomanas = { "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" };
 
@@ -22,26 +22,9 @@ namespace ConversorNumero.Dominio
             ConfigurarCentenasRomanas(centenasRomanas, dezenasRomanas);
 
             string[] milhares = { "M", "MM", "MMM", "ĪV̄", "V̄", "V̄Ī", "V̄ĪĪ", "V̄ĪĪĪ", "ĪX̄" };
-
         }
-
-        private void ConfigurarCentenasRomanas(string[] centenasRomanas, string[] dezenasRomanas)
-        {
-            for (int i = 0; i < centenasRomanas.Length; i++)
-            {
-                var valorCentena = (i + 1) * 100;
-
-                numeros.Add(centenasRomanas[i], valorCentena);
-
-                for (int j = 0; j < dezenasRomanas.Length; j++)
-                {
-                    var valorCentenaDezena = ((j + 1) * 10) + valorCentena; 
-                    numeros.Add(centenasRomanas[i] + dezenasRomanas[j], valorCentenaDezena);
-                }
-            }            
-        }
-
-        public int Converter(string numeroRomano)
+       
+        public int ConverterParaArabico(string numeroRomano)
         {
             string numeroEsquerda = ObterNumeroEsquerda(numeroRomano);
 
@@ -83,6 +66,23 @@ namespace ConversorNumero.Dominio
             for (int i = 0; i < unidadesRomanas.Length; i++)
                 numeros.Add(unidadesRomanas[i], i);
         }
+
+        private void ConfigurarCentenasRomanas(string[] centenasRomanas, string[] dezenasRomanas)
+        {
+            for (int i = 0; i < centenasRomanas.Length; i++)
+            {
+                var valorCentena = (i + 1) * 100;
+
+                numeros.Add(centenasRomanas[i], valorCentena);
+
+                for (int j = 0; j < dezenasRomanas.Length; j++)
+                {
+                    var valorCentenaDezena = ((j + 1) * 10) + valorCentena;
+                    numeros.Add(centenasRomanas[i] + dezenasRomanas[j], valorCentenaDezena);
+                }
+            }
+        }
+
 
         #endregion
     }
