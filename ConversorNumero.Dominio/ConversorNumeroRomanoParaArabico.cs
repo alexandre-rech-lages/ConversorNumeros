@@ -9,32 +9,81 @@ namespace ConversorNumero.Dominio
 
         public ConversorNumeroRomanoParaArabico()
         {
-            numeros.Add("", 0);
-            numeros.Add("I", 1);
-            numeros.Add("II", 2);
-            numeros.Add("III", 3);
-            numeros.Add("IV", 4);
-            numeros.Add("V", 5);
-            numeros.Add("VI", 6);
-            numeros.Add("VII", 7);
-            numeros.Add("VIII", 8);
-            numeros.Add("IX", 9);
-            numeros.Add("X", 10);
+            string[] unidadesRomanas = { "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" };
 
+            ConfigurarUnidadesRomanas(unidadesRomanas);
 
+            string[] dezenasRomanas = { "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC" };
+
+            ConfigurarDezenasRomanas(dezenasRomanas);
+
+            string[] centenasRomanas = { "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM" };
+
+            ConfigurarCentenasRomanas(centenasRomanas, dezenasRomanas);
+
+            string[] milhares = { "M", "MM", "MMM", "ĪV̄", "V̄", "V̄Ī", "V̄ĪĪ", "V̄ĪĪĪ", "ĪX̄" };
+
+        }
+
+        private void ConfigurarCentenasRomanas(string[] centenasRomanas, string[] dezenasRomanas)
+        {
+            for (int i = 0; i < centenasRomanas.Length; i++)
+            {
+                var valorCentena = (i + 1) * 100;
+
+                numeros.Add(centenasRomanas[i], valorCentena);
+
+                for (int j = 0; j < dezenasRomanas.Length; j++)
+                {
+                    var valorCentenaDezena = ((j + 1) * 10) + valorCentena; 
+                    numeros.Add(centenasRomanas[i] + dezenasRomanas[j], valorCentenaDezena);
+                }
+            }            
         }
 
         public int Converter(string numeroRomano)
-        {            
-            if (numeroRomano.StartsWith("X"))
-            {
-                numeroRomano = numeroRomano.Substring(1);                
+        {
+            string numeroEsquerda = ObterNumeroEsquerda(numeroRomano);
 
-                return numeros[numeroRomano] + 10;
-            }
+            string numeroDireita = ObterNumeroDireita(numeroRomano, numeroEsquerda);
 
-            return numeros[numeroRomano];
+            return numeros[numeroEsquerda] + numeros[numeroDireita];
         }
 
+        #region métodos privados
+        private static string ObterNumeroDireita(string numeroRomano, string numeroEsquerda)
+        {
+            return numeroRomano.Substring(numeroEsquerda.Length);
+        }
+
+        private static string ObterNumeroEsquerda(string numeroRomano)
+        {
+            return numeroRomano
+                            .Replace("IX", "")
+                            .Replace("VIII", "")
+                            .Replace("VII", "")
+                            .Replace("VI", "")
+                            .Replace("IV", "")
+                            .Replace("V", "")
+                            .Replace("III", "")
+                            .Replace("II", "")
+                            .Replace("I", "");
+        }
+
+        private void ConfigurarDezenasRomanas(string[] dezenasRomanas)
+        {
+            for (int i = 0; i < dezenasRomanas.Length; i++)
+            {
+                numeros.Add(dezenasRomanas[i], (i + 1) * 10);
+            }
+        }
+
+        private void ConfigurarUnidadesRomanas(string[] unidadesRomanas)
+        {
+            for (int i = 0; i < unidadesRomanas.Length; i++)
+                numeros.Add(unidadesRomanas[i], i);
+        }
+
+        #endregion
     }
 }
