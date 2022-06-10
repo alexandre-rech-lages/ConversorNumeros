@@ -1,4 +1,4 @@
-using ConversorNumero.Dominio;
+Ôªøusing ConversorNumero.Dominio;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ConversorNumeros.Testes
@@ -28,13 +28,13 @@ namespace ConversorNumeros.Testes
         [DataRow("X", 10)]                
         public void Deve_converter_numeros_romanos_do_1_ao_10(string numero, int resultadoEsperado)
         {
-            //cen·rio - arrange
+            //cen√°rio - arrange
             string numeroRomano = numero;
 
-            //aÁ„o - action 
+            //a√ß√£o - action 
             var resultado = conversor.ConverterParaArabico(numeroRomano);
 
-            //verificaÁ„o - assert
+            //verifica√ß√£o - assert
             Assert.AreEqual(resultadoEsperado, resultado);
         }
 
@@ -56,10 +56,10 @@ namespace ConversorNumeros.Testes
         {
             string numeroRomano = numero;
 
-            //aÁ„o - action 
+            //a√ß√£o - action 
             var resultado = conversor.ConverterParaArabico(numeroRomano);
 
-            //verificaÁ„o - assert
+            //verifica√ß√£o - assert
             Assert.AreEqual(resultadoEsperado, resultado);
         }
 
@@ -79,10 +79,10 @@ namespace ConversorNumeros.Testes
         {
             string numeroRomano = numero;
 
-            //aÁ„o - action 
+            //a√ß√£o - action 
             var resultado = conversor.ConverterParaArabico(numeroRomano);
 
-            //verificaÁ„o - assert
+            //verifica√ß√£o - assert
             Assert.AreEqual(resultadoEsperado, resultado);
         }
 
@@ -101,10 +101,10 @@ namespace ConversorNumeros.Testes
         {
             string numeroRomano = numero;
 
-            //aÁ„o - action 
+            //a√ß√£o - action 
             var resultado = conversor.ConverterParaArabico(numeroRomano);
 
-            //verificaÁ„o - assert
+            //verifica√ß√£o - assert
             Assert.AreEqual(resultadoEsperado, resultado);
         }
 
@@ -123,10 +123,10 @@ namespace ConversorNumeros.Testes
         {
             string numeroRomano = numero;
 
-            //aÁ„o - action 
+            //a√ß√£o - action 
             var resultado = conversor.ConverterParaArabico(numeroRomano);
 
-            //verificaÁ„o - assert
+            //verifica√ß√£o - assert
             Assert.AreEqual(resultadoEsperado, resultado);
         }
 
@@ -145,10 +145,10 @@ namespace ConversorNumeros.Testes
         {
             string numeroRomano = numero;
 
-            //aÁ„o - action 
+            //a√ß√£o - action 
             var resultado = conversor.ConverterParaArabico(numeroRomano);
 
-            //verificaÁ„o - assert
+            //verifica√ß√£o - assert
             Assert.AreEqual(resultadoEsperado, resultado);
         }
 
@@ -167,10 +167,10 @@ namespace ConversorNumeros.Testes
         {
             string numeroRomano = numero;
 
-            //aÁ„o - action 
+            //a√ß√£o - action 
             var resultado = conversor.ConverterParaArabico(numeroRomano);
 
-            //verificaÁ„o - assert
+            //verifica√ß√£o - assert
             Assert.AreEqual(resultadoEsperado, resultado);
         }
 
@@ -189,10 +189,10 @@ namespace ConversorNumeros.Testes
         {
             string numeroRomano = numero;
 
-            //aÁ„o - action 
+            //a√ß√£o - action 
             var resultado = conversor.ConverterParaArabico(numeroRomano);
 
-            //verificaÁ„o - assert
+            //verifica√ß√£o - assert
             Assert.AreEqual(resultadoEsperado, resultado);
         }
 
@@ -212,10 +212,10 @@ namespace ConversorNumeros.Testes
         {
             string numeroRomano = numero;
 
-            //aÁ„o - action 
+            //a√ß√£o - action 
             var resultado = conversor.ConverterParaArabico(numeroRomano);
 
-            //verificaÁ„o - assert
+            //verifica√ß√£o - assert
             Assert.AreEqual(resultadoEsperado, resultado);
         }
 
@@ -234,10 +234,10 @@ namespace ConversorNumeros.Testes
         {
             string numeroRomano = numero;
 
-            //aÁ„o - action 
+            //a√ß√£o - action 
             var resultado = conversor.ConverterParaArabico(numeroRomano);
 
-            //verificaÁ„o - assert
+            //verifica√ß√£o - assert
             Assert.AreEqual(resultadoEsperado, resultado);
         }
 
@@ -259,10 +259,10 @@ namespace ConversorNumeros.Testes
         {
             string numeroRomano = numero;
 
-            //aÁ„o - action 
+            //a√ß√£o - action 
             var resultado = conversor.ConverterParaArabico(numeroRomano);
 
-            //verificaÁ„o - assert
+            //verifica√ß√£o - assert
             Assert.AreEqual(resultadoEsperado, resultado);
         }
 
@@ -281,10 +281,10 @@ namespace ConversorNumeros.Testes
         {
             string numeroRomano = numero;
 
-            //aÁ„o - action 
+            //a√ß√£o - action 
             var resultado = conversor.ConverterParaArabico(numeroRomano);
 
-            //verificaÁ„o - assert
+            //verifica√ß√£o - assert
             Assert.AreEqual(resultadoEsperado, resultado);
         }
 
@@ -307,10 +307,54 @@ namespace ConversorNumeros.Testes
         {
             string numeroRomano = numero;
 
-            //aÁ„o - action 
+            //a√ß√£o - action 
             var resultado = conversor.ConverterParaArabico(numeroRomano);
 
-            //verificaÁ„o - assert
+            //verifica√ß√£o - assert
+            Assert.AreEqual(resultadoEsperado, resultado);
+        }
+
+        [TestMethod]
+        [DataRow("MCXI", 1111)]
+        [DataRow("MCXII", 1112)]
+        [DataRow("MCXIII", 1113)]
+        [DataRow("MCXIV", 1114)]
+        [DataRow("MCXV", 1115)]
+        [DataRow("MCXVI", 1116)]
+        [DataRow("MCXVII", 1117)]
+        [DataRow("MCXVIII", 1118)]
+        [DataRow("MCXIX", 1119)]
+        [DataRow("MCXX", 1120)]
+        public void Deve_converter_numeros_romanos_do_1111_ao_1120(string numero, int resultadoEsperado)
+        {
+            string numeroRomano = numero;
+
+            //a√ß√£o - action 
+            var resultado = conversor.ConverterParaArabico(numeroRomano);
+
+            //verifica√ß√£o - assert
+            Assert.AreEqual(resultadoEsperado, resultado);
+        }
+
+        [TestMethod]
+        [DataRow("VÃÑCXI", 5111)]
+        [DataRow("VÃÑCXII", 5112)]
+        [DataRow("VÃÑCXIII", 5113)]
+        [DataRow("VÃÑCXIV", 5114)]
+        [DataRow("VÃÑCXV", 5115)]
+        [DataRow("VÃÑCXVI", 5116)]
+        [DataRow("VÃÑCXVII", 5117)]
+        [DataRow("VÃÑCXVIII", 5118)]
+        [DataRow("VÃÑCXIX", 5119)]
+        [DataRow("VÃÑCXX", 5120)]
+        public void Deve_converter_numeros_romanos_do_5111_ao_5120(string numero, int resultadoEsperado)
+        {
+            string numeroRomano = numero;
+
+            //a√ß√£o - action 
+            var resultado = conversor.ConverterParaArabico(numeroRomano);
+
+            //verifica√ß√£o - assert
             Assert.AreEqual(resultadoEsperado, resultado);
         }
 

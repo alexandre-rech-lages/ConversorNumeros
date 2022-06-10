@@ -21,7 +21,9 @@ namespace ConversorNumero.Dominio
 
             ConfigurarCentenasRomanas(centenasRomanas, dezenasRomanas);
 
-            string[] milhares = { "M", "MM", "MMM", "ĪV̄", "V̄", "V̄Ī", "V̄ĪĪ", "V̄ĪĪĪ", "ĪX̄" };
+            string[] milharesRomanas = { "M", "MM", "MMM", "ĪV̄", "V̄", "V̄Ī", "V̄ĪĪ", "V̄ĪĪĪ", "ĪX̄" };
+
+            ConfigurarMilhares(milharesRomanas, centenasRomanas, dezenasRomanas);
         }
        
         public int ConverterParaArabico(string numeroRomano)
@@ -34,6 +36,8 @@ namespace ConversorNumero.Dominio
         }
 
         #region métodos privados
+
+        
         private static string ObterNumeroDireita(string numeroRomano, string numeroEsquerda)
         {
             return numeroRomano.Substring(numeroEsquerda.Length);
@@ -42,15 +46,21 @@ namespace ConversorNumero.Dominio
         private static string ObterNumeroEsquerda(string numeroRomano)
         {
             return numeroRomano
-                            .Replace("IX", "")
-                            .Replace("VIII", "")
-                            .Replace("VII", "")
-                            .Replace("VI", "")
-                            .Replace("IV", "")
-                            .Replace("V", "")
-                            .Replace("III", "")
-                            .Replace("II", "")
-                            .Replace("I", "");
+                            .Replace("IX", "", StringComparison.CurrentCulture)
+                            .Replace("VIII", "",  StringComparison.CurrentCulture)
+                            .Replace("VII", "",  StringComparison.CurrentCulture)
+                            .Replace("VI", "",  StringComparison.CurrentCulture)
+                            .Replace("IV", "",  StringComparison.CurrentCulture)
+                            .Replace("V", "",  StringComparison.CurrentCulture)
+                            .Replace("III", "",  StringComparison.CurrentCulture)
+                            .Replace("II", "",  StringComparison.CurrentCulture)
+                            .Replace("I", "",  StringComparison.CurrentCulture);
+        }
+
+        private void ConfigurarUnidadesRomanas(string[] unidadesRomanas)
+        {
+            for (int i = 0; i < unidadesRomanas.Length; i++)
+                numeros.Add(unidadesRomanas[i], i);
         }
 
         private void ConfigurarDezenasRomanas(string[] dezenasRomanas)
@@ -60,13 +70,7 @@ namespace ConversorNumero.Dominio
                 numeros.Add(dezenasRomanas[i], (i + 1) * 10);
             }
         }
-
-        private void ConfigurarUnidadesRomanas(string[] unidadesRomanas)
-        {
-            for (int i = 0; i < unidadesRomanas.Length; i++)
-                numeros.Add(unidadesRomanas[i], i);
-        }
-
+       
         private void ConfigurarCentenasRomanas(string[] centenasRomanas, string[] dezenasRomanas)
         {
             for (int i = 0; i < centenasRomanas.Length; i++)
@@ -82,6 +86,28 @@ namespace ConversorNumero.Dominio
                 }
             }
         }
+
+        private void ConfigurarMilhares(string[] milhares, string[] centenas, string[] dezenas)
+        {
+            for (int z = 0; z < centenas.Length; z++)
+            {
+                var valorMilhar = (z + 1) * 1000;
+                numeros[milhares[z]] = valorMilhar;
+
+                for (int j = 0; j < centenas.Length; j++)
+                {
+                    var valorMilharCentena = ((j + 1) * 100) + valorMilhar;
+                    numeros[milhares[z] + centenas[j]] = valorMilharCentena;
+
+                    for (int i = 0; i < dezenas.Length; i++)
+                    {
+                        var valorMilharCentenaDezena = ((i + 1) * 10) + valorMilharCentena;
+                        numeros[milhares[z] + centenas[j] + dezenas[i]] = valorMilharCentenaDezena;
+                    }
+                }
+            }
+        }
+
 
 
         #endregion
