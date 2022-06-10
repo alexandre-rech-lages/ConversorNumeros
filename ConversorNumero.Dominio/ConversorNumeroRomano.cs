@@ -105,7 +105,15 @@ namespace ConversorNumero.Dominio
                         numeros[milhares[z] + centenas[j] + dezenas[i]] = valorMilharCentenaDezena;
                     }
                 }
+
+                for (int i = 0; i < dezenas.Length; i++)
+                {
+                    var valorMilharDezena = ((i + 1) * 10) + valorMilhar;
+                    numeros[milhares[z] + dezenas[i]] = valorMilharDezena;
+                }
             }
+
+
         }
 
 

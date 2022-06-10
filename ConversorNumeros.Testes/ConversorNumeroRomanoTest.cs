@@ -14,7 +14,7 @@ namespace ConversorNumeros.Testes
             conversor = new ConversorNumeroRomano();
         }
 
-        #region classe de equivalencia 01 - Unidades
+        #region classe de equivalencia 01 - Unidade
         [TestMethod]
         [DataRow("I",1)]
         [DataRow("II", 2)]
@@ -40,7 +40,31 @@ namespace ConversorNumeros.Testes
 
         #endregion
 
-        #region classe de equivalencia 02 - Dezena e Unidade
+        #region classe de equivalencia 02 - Dezena
+        [TestMethod]
+        [DataRow("X", 10)]
+        [DataRow("XX", 20)]
+        [DataRow("XXX", 30)]
+        [DataRow("XL", 40)]
+        [DataRow("L", 50)]
+        [DataRow("LX", 60)]
+        [DataRow("LXX", 70)]
+        [DataRow("LXXX", 80)]
+        [DataRow("XC", 90)]
+        public void Deve_converter_dezenas_romanos_do_10_ao_90(string numero, int resultadoEsperado)
+        {
+            string numeroRomano = numero;
+
+            //ação - action 
+            var resultado = conversor.ConverterParaArabico(numeroRomano);
+
+            //verificação - assert
+            Assert.AreEqual(resultadoEsperado, resultado);
+        }
+
+        #endregion
+
+        #region classe de equivalencia 03 - Dezena e Unidade
         [TestMethod]
         [DataRow("XI", 11)]
         [DataRow("XII", 12)]
@@ -243,7 +267,7 @@ namespace ConversorNumeros.Testes
 
         #endregion
 
-        #region classe de equivalencia 03 - Centena, Dezena e Unidade
+        #region classe de equivalencia 04 - Centena e Unidade
         [TestMethod]
         [DataRow("CI", 101)]
         [DataRow("CII", 102)]
@@ -266,6 +290,9 @@ namespace ConversorNumeros.Testes
             Assert.AreEqual(resultadoEsperado, resultado);
         }
 
+        #endregion
+
+        #region classe de equivalencia 05 - Centena, Dezena e Unidade
         [TestMethod]
         [DataRow("CXI", 111)]
         [DataRow("CXII", 112)]
@@ -287,12 +314,12 @@ namespace ConversorNumeros.Testes
             //verificação - assert
             Assert.AreEqual(resultadoEsperado, resultado);
         }
-
         #endregion
 
-        #region classe de equivalencia 04 - Milhar, Centena, Dezena e Unidade
+        #region classe de equivalencia 06 - Milhar e Unidade
 
         [TestMethod]
+        [DataRow("M", 1000)]
         [DataRow("MI", 1001)]
         [DataRow("MII", 1002)]
         [DataRow("MIII", 1003)]
@@ -302,7 +329,6 @@ namespace ConversorNumeros.Testes
         [DataRow("MVII", 1007)]
         [DataRow("MVIII", 1008)]
         [DataRow("MIX", 1009)]
-        [DataRow("MX", 1010)]
         public void Deve_converter_numeros_romanos_do_1001_ao_1010(string numero, int resultadoEsperado)
         {
             string numeroRomano = numero;
@@ -314,17 +340,21 @@ namespace ConversorNumeros.Testes
             Assert.AreEqual(resultadoEsperado, resultado);
         }
 
+        #endregion
+
+        #region classe de equivalencia 07 - Milhar, Centena, Dezena
         [TestMethod]
-        [DataRow("MCXI", 1111)]
-        [DataRow("MCXII", 1112)]
-        [DataRow("MCXIII", 1113)]
-        [DataRow("MCXIV", 1114)]
-        [DataRow("MCXV", 1115)]
-        [DataRow("MCXVI", 1116)]
-        [DataRow("MCXVII", 1117)]
-        [DataRow("MCXVIII", 1118)]
-        [DataRow("MCXIX", 1119)]
+        [DataRow("MC", 1100)]
+        [DataRow("MCX", 1110)]
         [DataRow("MCXX", 1120)]
+        [DataRow("MCXXX", 1130)]
+        [DataRow("MCXL", 1140)]
+        [DataRow("MCL", 1150)]
+        [DataRow("MCLX", 1160)]
+        [DataRow("MCLXX", 1170)]
+        [DataRow("MCLXXX", 1180)]
+        [DataRow("MCXC", 1190)]
+        [DataRow("MCC", 1200)]
         public void Deve_converter_numeros_romanos_do_1111_ao_1120(string numero, int resultadoEsperado)
         {
             string numeroRomano = numero;
@@ -335,7 +365,9 @@ namespace ConversorNumeros.Testes
             //verificação - assert
             Assert.AreEqual(resultadoEsperado, resultado);
         }
+        #endregion
 
+        #region classe de equivalencia 08 - Milhar, Centena, Dezena e Unidade
         [TestMethod]
         [DataRow("V̄CXI", 5111)]
         [DataRow("V̄CXII", 5112)]
