@@ -17,8 +17,6 @@ namespace ConversorNumero.Dominio
             string[] centenasRomanas = { "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM" };
             string[] milharesRomanas = { "M", "MM", "MMM", "ĪV̄", "V̄", "V̄Ī", "V̄ĪĪ", "V̄ĪĪĪ", "ĪX̄" };
 
-            unidades = new Dictionary<int, string>();
-
             for (int i = 0; i < 9; i++)
             {
                 unidades[i + 1] = unidadesRomanas[i];
